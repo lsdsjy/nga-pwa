@@ -1,17 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    {{test}}
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+                // eslint-disable-next-line
+import { fetch } from './api'
 
 export default {
   name: 'app',
+  data() {
+    return {
+      test: null
+    }
+  },
+  mounted() {
+    // fetch('/thread.php?fid=459&page=1&lite=js').then(result => {
+    //   this.test=JSON.stringify(result)
+    // })
+  },
   components: {
-    HelloWorld
   }
 }
 </script>
